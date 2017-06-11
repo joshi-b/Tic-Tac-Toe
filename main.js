@@ -18,8 +18,7 @@ function gamePlay(box) {
 
 function nextMove() {
     if (checkWin(document.turn)) {
-        alert("Congratulations!\nPlayer " + document.turn + " won!");
-        clearSlate();
+        myAlert("Player " + document.turn + " won!");
     } else if (document.turn == "X") {
         document.turn = "O";
         playerTurn("It is " + document.turn + "'s turn.");
@@ -41,7 +40,7 @@ function checkWin(move) {
         checkRow(3,5,7, move)) {
             result = true;
         }
-    return result;
+        return result;
 }
 
 function checkRow(a, b, c, move) {
@@ -58,4 +57,18 @@ function getState(number) {
 
 function clearSlate() {
     location.reload();
+    document.getElementById('messagebox').style.display = 'none';
+    document.getElementById('messageoverlay').style.display = 'none';
+}
+
+function myAlert(message) {
+    var messageoverlay = document.getElementById('messageoverlay');
+    var messagebox = document.getElementById('messagebox');
+    messageoverlay.style.display = "block";
+    messagebox.style.left = (window.innerWidth/2) - (550 * .5)+"px";
+    messagebox.style.top = "100px";
+    messagebox.style.display = "block";
+    document.getElementById('messageboxhead').innerHTML = "Congratulations!";
+    document.getElementById('messageboxbody').innerHTML = message;
+    document.getElementById('messageboxfoot').innerHTML = '<button onclick="clearSlate()">Start Over</button>';
 }

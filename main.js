@@ -17,8 +17,10 @@ function gamePlay(box) {
 }
 
 function nextMove() {
-    if (checkWin(document.turn)) {
-        myAlert("Player " + document.turn + " won!");
+    if (noWinner()) {
+        myAlert("Draw!", "Nobody won.");
+    } else if (checkWin(document.turn)) {
+        myAlert("Congratulations!","Player " + document.turn + " won!");
     } else if (document.turn == "X") {
         document.turn = "O";
         playerTurn("It is " + document.turn + "'s turn.");
@@ -61,14 +63,30 @@ function clearSlate() {
     document.getElementById('messageoverlay').style.display = 'none';
 }
 
-function myAlert(message) {
+function myAlert(header,message) {
     var messageoverlay = document.getElementById('messageoverlay');
     var messagebox = document.getElementById('messagebox');
     messageoverlay.style.display = "block";
     messagebox.style.left = (window.innerWidth/2) - (550 * .5)+"px";
     messagebox.style.top = "100px";
     messagebox.style.display = "block";
-    document.getElementById('messageboxhead').innerHTML = "Congratulations!";
+    document.getElementById('messageboxhead').innerHTML = header;
     document.getElementById('messageboxbody').innerHTML = message;
     document.getElementById('messageboxfoot').innerHTML = '<button onclick="clearSlate()">Start Over</button>';
+}
+
+function noWinner() {
+    var result = false;
+    if (getState(1) &&
+        getState(2) &&
+        getState(3) &&
+        getState(4) &&
+        getState(5) &&
+        getState(6) &&
+        getState(7) &&
+        getState(8) &&
+        getState(9)) {
+            result = true;
+        }
+    return result;
 }

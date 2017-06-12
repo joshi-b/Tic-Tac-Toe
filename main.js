@@ -52,7 +52,7 @@ function checkRow(a, b, c, move) {
 }
 
 function getState(number) {
-    return document.getElementById("row-"+ number).innerText;
+    return document.getElementById("cell-"+ number).innerText;
 }
 
 function clearSlate() {

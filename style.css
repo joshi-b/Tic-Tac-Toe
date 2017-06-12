@@ -1,15 +1,19 @@
 h1 {
-    margin-top: 40px;
+    margin: 0;
+    padding-top: 30px;
     text-align: center;
-    font-size: 36px;
-    color: #022B3A;
+    font-size: 40px;
+    color: #E5ECE9;
+    font-family: 'Rock Salt', cursive;
 }
 
 #message {
     position: relative;
-    top: -20px;
     text-align: center;
-    color: #022B3A;
+    color: #E5ECE9;
+    font-size: 30px;
+    font-family: 'Reenie Beanie', cursive;
+    margin: 0;
 }
 
 body {
@@ -20,15 +24,14 @@ body {
     overflow: hidden;
     display: block;
     font-family: Verdana;
-    background-color: #ffffff;
+    background-color: #497F4C;
 }
 
 td {
-    font-family: cursive;
-    border: 1px solid #022B3A;
+    font-family: 'Reenie Beanie', cursive;
+    border: 1px dashed #E5ECE9;
     height: 150px;
     width: 150px;
-    border-radius: 10px;
     margin-right: 10px;
     text-align: center;
     font-size: 90px;
@@ -38,10 +41,48 @@ td {
 table {
     margin-left: auto;
     margin-right: auto;
-    border-collapse: separate;
+    border-collapse: collapse;
     border-spacing: 10px;
-    color: #022B3A;
+    color: #E5ECE9;
+    margin-top: 15px;
 }
+
+#cell-1 {
+    border-top: none;
+    border-left: none;
+}
+
+#cell-2 {
+    border-top: none;
+}
+
+#cell-3 {
+    border-top: none;
+    border-right: none;
+}
+
+#cell-4 {
+    border-left: none;
+}
+
+#cell-6 {
+    border-right: none;
+}
+
+#cell-7 {
+    border-left: none;
+    border-bottom: none;
+}
+
+#cell-8 {
+    border-bottom: none;
+}
+
+#cell-9 {
+    border-right: none;
+    border-bottom: none;
+}
+
 
 #messageoverlay {
     display: none;
@@ -58,21 +99,20 @@ table {
 #messagebox {
     display: none;
     position: fixed;
-    background: #000000;
+    background: #3A3A3A;
     border-radius: 10px;
     width: 550px;
     z-index: 20;
-    opacity: 0.9;
+    opacity: 0.8;
     margin-top: 100px;
 }
 
 #messagebox > div {
-    background: #ffffff;
     margin: 8px;
 }
 
 #messagebox > div > #messageboxhead {
-    background: #595959;
+    background: #767A78;
     font-size: 19px;
     padding:10px;
     color: #ffffff;
@@ -81,14 +121,14 @@ table {
 }
 
 #messagebox > div > #messageboxbody {
-    background: #000000;
+    background: #3A3A3A;
     padding: 20px;
     color: #ffffff;
     text-align: center;
 }
 
 #messagebox > div > #messageboxfoot {
-    background: #000000;
+    background: #767A78;
     padding: 10px;
     text-align: center;
 }

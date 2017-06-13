@@ -14,6 +14,7 @@ h1 {
     font-size: 30px;
     font-family: 'Reenie Beanie', cursive;
     margin: 0;
+    display: none;
 }
 
 body {
@@ -45,6 +46,7 @@ table {
     border-spacing: 10px;
     color: #E5ECE9;
     margin-top: 15px;
+    display:none;
 }
 
 #cell-1 {
@@ -82,7 +84,6 @@ table {
     border-right: none;
     border-bottom: none;
 }
-
 
 #messageoverlay {
     display: none;
@@ -133,10 +134,21 @@ table {
     text-align: center;
 }
 
-button {
+#messagebox > div > #messageboxfoot > button {
     background-color: #595959;
     color: #ffffff;
     padding: 5px 22px;
     border-radius: 12px;
     font-size: 14px;
+}
+
+#start-menu {
+    height: 492px;
+    width: 450px;
+    background: #497F4C;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 80px;
 }

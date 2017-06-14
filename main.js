@@ -1,7 +1,20 @@
 window.onload = function init() {
-    document.turn = "X";
-    playerTurn(document.turn + " has the first turn.");
+    //document.turn = "X";
+    //document.getElementById("message").stype.display = 'b'
+    //playerTurn(document.turn + " has the first turn.");
 }
+////
+function playerButton(turn) {
+    var tempturn = turn.innerText;
+    var tempturnArray = tempturn.split(" ");
+    document.turn = tempturnArray[1];
+    document.getElementById("start-menu").style.display = 'none';
+    document.getElementById("message").style.display = 'block';
+    playerTurn(document.turn + " has the first turn.");
+    document.getElementById("gameBoard").style.display = 'block';
+}
+
+///
 
 function playerTurn(message) {
     document.getElementById("message").innerText = message;

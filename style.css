@@ -143,12 +143,27 @@ table {
 }
 
 #start-menu {
-    height: 492px;
-    width: 450px;
+    height: 400px;
+    width: 100%;
     background: #497F4C;
     display: block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    line-height: 80px;
+    padding-top: 50px;
+    font-size: 60px;
+    font-family: 'Reenie Beanie', cursive;
+    color: #E5ECE9;
+    background-color: #0D1F22;
+    opacity: 0.8;
+    text-shadow: 1px 2px #BBC1BF;
+}
+
+#pX, #pO {
+    margin-top: 10px;
+    background-color: #595959;
+    color: #ffffff;
+    padding: 5px 22px;
+    border-radius: 12px;
+    font-size: 14px;
 }

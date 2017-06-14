@@ -10,8 +10,10 @@
     <div id ="message">player turn goes here</div>
     <div id="start-menu">
         <h4>Which player will start?</goth4>
-        <button id="pX">Player X</button>
-        <button id="pO">Player O</button>
+        <div>
+            <button id="pX" onclick="playerButton(this)">Player X</button>
+            <button id="pO" onclick="playerButton(this)">Player O</button>
+        </div>
     </div>
     <div id = "messageoverlay"></div>
     <div id = "messagebox">
@@ -21,7 +23,7 @@
             <div id="messageboxfoot"></div>
         </div>
     </div>
-    <table>
+    <table id="gameBoard">
         <tr>
             <td id= "cell-1" class="Box" onclick="gamePlay(this)"></td>
             <td id= "cell-2" class="Box" onclick="gamePlay(this)"></td>

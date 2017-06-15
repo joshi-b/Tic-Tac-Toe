@@ -22,10 +22,10 @@ function gamePlay(box) {
 }
 
 function nextMove() {
-    if (noWinner()) {
-        myAlert("Draw!", "Nobody won.");
-    } else if (checkWin(document.turn)) {
+    if (checkWin(document.turn)) {
         myAlert("Congratulations!","Player " + document.turn + " won!");
+    } else if (noWinner()) {
+        myAlert("Draw!", "Nobody won.");
     } else if (document.turn == "X") {
         document.turn = "O";
         playerTurn("It is " + document.turn + "'s turn.");

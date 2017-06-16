@@ -5,6 +5,8 @@ h1 {
     font-size: 40px;
     color: #E5ECE9;
     font-family: 'Rock Salt', cursive;
+    text-shadow: 1px 2px #BBC1BF;
+    padding-bottom: 10px;
 }
 
 #message {
@@ -47,6 +49,11 @@ table {
     color: #E5ECE9;
     margin-top: 15px;
     display:none;
+}
+
+#gameBoard {
+    background: #0D1F22;
+    opacity: 0.8;
 }
 
 #cell-1 {
@@ -143,9 +150,8 @@ table {
 }
 
 #start-menu {
-    height: 400px;
+    height: 350px;
     width: 100%;
-    background: #497F4C;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -156,7 +162,7 @@ table {
     color: #E5ECE9;
     background-color: #0D1F22;
     opacity: 0.8;
-    text-shadow: 1px 2px #BBC1BF;
+    border: 1px dashed #E5ECE9;
 }
 
 #pX, #pO {
@@ -166,4 +172,15 @@ table {
     padding: 5px 22px;
     border-radius: 12px;
     font-size: 14px;
+    transition: all 0.5s ease-in-out;
+}
+
+#pX:hover {
+    padding: 9px 24px;
+    transform: scale(1,1);
+}
+
+#pO:hover {
+    padding: 9px 24px;
+    transform: scale(1,1);
 }

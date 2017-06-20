@@ -6,7 +6,7 @@ h1 {
     color: #E5ECE9;
     font-family: 'Rock Salt', cursive;
     text-shadow: 1px 2px #BBC1BF;
-    padding-bottom: 10px;
+    padding-bottom: 25px;
 }
 
 #message {
@@ -156,13 +156,19 @@ table {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    padding-top: 50px;
-    font-size: 60px;
+    font-size: 55px;
+    padding-top: 0;
     font-family: 'Reenie Beanie', cursive;
     color: #E5ECE9;
     background-color: #0D1F22;
     opacity: 0.8;
     border: 1px dashed #E5ECE9;
+}
+
+#start-menu > h4 {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 100px;
 }
 
 #pX, #pO {

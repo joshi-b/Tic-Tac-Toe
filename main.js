@@ -6,6 +6,7 @@ function playerButton(turn) {
     document.getElementById("message").style.display = 'block';
     playerTurn(document.turn + " has the first turn.");
     document.getElementById("gameBoard").style.display = 'table';
+    document.getElementById("title").style.padding = "30px 30px 10px 30px";
 }
 
 function playerTurn(message) {

@@ -3,18 +3,18 @@ h1 {
     padding-top: 30px;
     text-align: center;
     font-size: 40px;
-    color: #E5ECE9;
+    color: #939393;
     font-family: 'Rock Salt', cursive;
-    text-shadow: 1px 2px #BBC1BF;
+    text-shadow: 1px 2px #9B9B9B;
     padding-bottom: 25px;
 }
 
 #message {
     position: relative;
     text-align: center;
-    color: #E5ECE9;
-    font-size: 30px;
-    font-family: 'Reenie Beanie', cursive;
+    color: #939393;
+    font-size: 25px;
+    font-family: 'Abel', sans-serif;
     margin: 0;
     display: none;
 }
@@ -27,11 +27,11 @@ body {
     overflow: hidden;
     display: block;
     font-family: Verdana;
-    background-color: #497F4C;
+    background-color: #FFFFFF;
 }
 
 td {
-    font-family: 'Reenie Beanie', cursive;
+    font-family: cursive;
     border: 1px dashed #E5ECE9;
     height: 150px;
     width: 150px;
@@ -54,6 +54,7 @@ table {
 #gameBoard {
     background: #0D1F22;
     opacity: 0.8;
+    margin-top: 0;
 }
 
 #cell-1 {
@@ -107,20 +108,17 @@ table {
 #messagebox {
     display: none;
     position: fixed;
-    background: #3A3A3A;
-    border-radius: 10px;
+    background: #747474;
     width: 550px;
     z-index: 20;
     opacity: 1;
     margin-top: 100px;
-}
-
-#messagebox > div {
-    margin: 8px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 #messagebox > div > #messageboxhead {
-    background: #767A78;
+    background: #939393;
     font-size: 19px;
     padding:10px;
     color: #ffffff;
@@ -129,14 +127,14 @@ table {
 }
 
 #messagebox > div > #messageboxbody {
-    background: #3A3A3A;
+    background: #747474;
     padding: 20px;
     color: #ffffff;
     text-align: center;
 }
 
 #messagebox > div > #messageboxfoot {
-    background: #767A78;
+    background: #939393;
     padding: 10px;
     text-align: center;
 }
@@ -150,15 +148,15 @@ table {
 }
 
 #start-menu {
-    height: 350px;
+    height: 160px;
     width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-size: 55px;
+    font-size: 43px;
     padding-top: 0;
-    font-family: 'Reenie Beanie', cursive;
+    font-family: "Abel", sans-serif;
     color: #E5ECE9;
     background-color: #0D1F22;
     opacity: 0.8;
@@ -166,27 +164,29 @@ table {
 }
 
 #start-menu > h4 {
-    margin-top: auto;
+    margin-top: 28px;
     margin-bottom: auto;
-    padding-top: 100px;
+}
+
+#buttons {
+    margin-top: -9px;
 }
 
 #pX, #pO {
-    margin-top: 10px;
     background-color: #595959;
     color: #ffffff;
     padding: 5px 22px;
     border-radius: 12px;
-    font-size: 14px;
+    font-size: 13px;
     transition: all 0.5s ease-in-out;
 }
 
 #pX:hover {
-    padding: 9px 24px;
+    padding: 9px 22px;
     transform: scale(1,1);
 }
 
 #pO:hover {
-    padding: 9px 24px;
+    padding: 9px 22px;
     transform: scale(1,1);
 }

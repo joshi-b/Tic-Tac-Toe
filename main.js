@@ -1,3 +1,20 @@
+var human = true;
+var game = true;
+
+//assume human always x for now.
+var huPlayer;
+var aiPlayer;
+
+var one = document.getElementById("cell-1");
+var two = document.getElementById("cell-2");
+var three = document.getElementById("cell-3");
+var four = document.getElementById("cell-4");
+var five = document.getElementById("cell-5");
+var six = document.getElementById("cell-6");
+var seven = document.getElementById("cell-7");
+var eight = document.getElementById("cell-8");
+var nine = document.getElementById("cell-9");
+
 function playerButton(turn) {
     var tempturn = turn.innerText;
     var tempturnArray = tempturn.split(" ");
@@ -10,34 +27,26 @@ function playerButton(turn) {
     document.getElementById("title").style.padding = "30px 30px 10px 30px";
 
     msg("It is "+  document.turn + "'s turn.");
+    setPlayers();
 }
 
-var human = true;
-var game = true;
-
-//assume human always x for now.
-var huPlayer = "X";
-var aiPlayer = "O";
-
-var one = document.getElementById("cell-1");
-var two = document.getElementById("cell-2");
-var three = document.getElementById("cell-3");
-var four = document.getElementById("cell-4");
-var five = document.getElementById("cell-5");
-var six = document.getElementById("cell-6");
-var seven = document.getElementById("cell-7");
-var eight = document.getElementById("cell-8");
-var nine = document.getElementById("cell-9");
+function setPlayers() {
+    if (document.turn == "X") {
+        huPlayer = "X";
+        aiPlayer = "O";
+    } else {
+        huPlayer = "O";
+        aiPlayer = "X";
+    }
+}
 
 function changeTurn() {
     if (!human) {
         human = true;
-        document.turn = "X";
-        msg("It is "+ document.turn + "'s turn.");
+        msg("It is "+ huPlayer + "'s turn.");
     } else {
         human = false;
-        document.turn = "O";
-        msg("It is O's turn.");
+        msg("It is " + aiPlayer + "'s turn.");
         setTimeout(callAI, 1000);
 
     }
@@ -57,14 +66,14 @@ function reset() {
 function gamePlay(clicked) {
     if (human && game) {
         if (clicked.innerText == "") {
-            clicked.innerText = document.turn;
+            clicked.innerText = huPlayer;
             changeTurn();
         } else {
             msg("You can't play there, try again.");
             return
         }
-        if (checkWin(document.turn)) {
-            gameAlert("Congratulations!", "Player "+ document.turn + " won!");
+        if (checkWin(huPlayer)) {
+            gameAlert("Congratulations!", "Player "+ huPlayer + " won!");
             game = false;
         } else if (checkDraw()) {
             gameAlert("Draw!", "Nobody won.");
@@ -76,8 +85,8 @@ function callAI() {
     if (!human && game) {
         bestMove();
 
-        if (checkWin("O")) {
-            gameAlert("Congratulations!","Player O won!");
+        if (checkWin(aiPlayer)) {
+            gameAlert("Congratulations!","Player" + aiPlayer + "won!");
             game = false;
         } else if (checkDraw()) {
             gameAlert("Draw!", "Nobody won.");
@@ -142,61 +151,54 @@ function checkWin(player) {
 }
 
 function bestMove() {
-    if (one == null && ((three.innerText == "X" && two.innerText == "X") || (nine.innerText == "X" && five.innerText == "X") || (seven.innerText == "X" && four.innerText == "X"))) {
-        document.getElementById("cell-1").innerHTML = "O";
-
+    if (one == null && ((three.innerText == huPlayer && two.innerText == huPlayer) || (nine.innerText == huPlayer && five.innerText == huPlayer) || (seven.innerText == huPlayer && four.innerText == huPlayer))) {
+        document.getElementById("cell-1").innerHTML = aiPlayer;
     } else {
-        if (two.innerText == "" && ((one.innerText == "X" && three.innerText == "X") || (eight.innerText == "X" && five.innerText == "X"))) {
-            document.getElementById("cell-2").innerHTML = "O";
+        if (two.innerText == "" && ((one.innerText == huPlayer && three.innerText == huPlayer) || (eight.innerText == huPlayer && five.innerText == huPlayer))) {
+            document.getElementById("cell-2").innerHTML = aiPlayer;
 
         } else {
-            if (three.innerText == "" && ((one.innerText == "X" && two.innerText == "X") || (seven.innerText == "X" && five.innerText == "X") || (nine.innerText == "X" && six.innerText == "X"))) {
-                document.getElementById("cell-3").innerHTML = "O";
+            if (three.innerText == "" && ((one.innerText == huPlayer && two.innerText == huPlayer) || (seven.innerText == huPlayer && five.innerText == huPlayer) || (nine.innerText == huPlayer && six.innerText == huPlayer))) {
+                document.getElementById("cell-3").innerHTML = aiPlayer;
 
             } else {
-                if (nine.innerText == "" && ((seven.innerText == "X" && eight.innerText == "X") || (one.innerText == "X" && five.innerText == "X") || (three.innerText == "X" && six.innerText == "X"))) {
-                    document.getElementById("cell-9").innerHTML = "O";
+                if (nine.innerText == "" && ((seven.innerText == huPlayer && eight.innerText == huPlayer) || (one.innerText == huPlayer && five.innerText == huPlayer) || (three.innerText == huPlayer && six.innerText == huPlayer))) {
+                    document.getElementById("cell-9").innerHTML = aiPlayer;
 
                 } else {
-                    if (seven.innerText == "" && ((nine.innerText == "X" && eight.innerText == "X") || (three.innerText == "X" && five.innerText == "X") || (one.innerText == "X" && four.innerText == "X"))) {
-                        document.getElementById("cell-7").innerHTML = "O";
+                    if (seven.innerText == "" && ((nine.innerText == huPlayer && eight.innerText == huPlayer) || (three.innerText == huPlayer && five.innerText == huPlayer) || (one.innerText == huPlayer && four.innerText == huPlayer))) {
+                        document.getElementById("cell-7").innerHTML = aiPlayer;
 
                     } else {
-                        if (eight.innerText == "" && ((nine.innerText == "X" && seven.innerText == "X") || (two.innerText == "X" && five.innerText == "X"))) {
-                            document.getElementById("cell-8").innerHTML = "O";
+                        if (eight.innerText == "" && ((nine.innerText == huPlayer && seven.innerText == huPlayer) || (two.innerText == huPlayer && five.innerText == huPlayer))) {
+                            document.getElementById("cell-8").innerHTML = aiPlayer;
 
                         } else {
-                            if (four.innerText == "" && ((six.innerText == "X" && five.innerText == "X") || (one.innerText == "X" && seven.innerText == "X"))) {
-                                document.getElementById("cell-4").innerHTML = "O";
+                            if (four.innerText == "" && ((six.innerText == huPlayer && five.innerText == huPlayer) || (one.innerText == huPlayer && seven.innerText == huPlayer))) {
+                                document.getElementById("cell-4").innerHTML = aiPlayer;
 
                             } else {
-                                if (six.innerText == "" && ((three.innerText == "X" && six.innerText == "X") || (five.innerText == "X" && four.innerText == "X"))) {
-                                    document.getElementById("cell-6").innerHTML = "O";
+                                if (six.innerText == "" && ((three.innerText == huPlayer && six.innerText == huPlayer) || (five.innerText == huPlayer && four.innerText == huPlayer))) {
+                                    document.getElementById("cell-6").innerHTML = aiPlayer;
 
                                 } else {
-                                    if (five == null && ((three.innerText == "X" && seven.innerText == "X") || (nine.innerText == "X" && one.innerText == "X") || (six.innerText == "X" && four.innerText == "X") || (eight.innerText == "X" && two.innerText == "X"))) {
-                                        document.getElementById("cell-5").innerHTML = "O";
-
+                                    if (five.innerText == "" && ((three.innerText == huPlayer && seven.innerText == huPlayer) || (nine.innerText == huPlayer && one.innerText == huPlayer) || (six.innerText == huPlayer && four.innerText == huPlayer) || (eight.innerText == huPlayer && two.innerText == huPlayer))) {
+                                        document.getElementById("cell-5").innerHTML = aiPlayer;
                                     } else {
                                         if (five.innerText == "") {
-                                            document.getElementById("cell-5").innerHTML = "O";
-
+                                            document.getElementById("cell-5").innerHTML = aiPlayer;
                                         } else {
                                             if (one.innerText == "") {
-                                                document.getElementById("cell-1").innerHTML = "O";
-
+                                                document.getElementById("cell-1").innerHTML = aiPlayer;
                                             } else {
                                                 if (nine.innerText == "") {
-                                                    document.getElementById("cell-9").innerHTML = "O";
-
+                                                    document.getElementById("cell-9").innerHTML = aiPlayer;
                                                 } else {
                                                     if (eight.innerText == "") {
-                                                        document.getElementById("cell-8").innerHTML = "O";
-
+                                                        document.getElementById("cell-8").innerHTML = aiPlayer;
                                                     } else {
                                                         if (four.innerText == "") {
-                                                            document.getElementById("cell-4").innerHTML = "O";
-
+                                                            document.getElementById("cell-4").innerHTML = aiPlayer;
                                                         }
                                                     }
                                                 }

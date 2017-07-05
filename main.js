@@ -85,7 +85,7 @@ function callAI() {
         bestMove();
 
         if (checkWin(aiPlayer)) {
-            gameAlert("Congratulations!","Player" + aiPlayer + "won!");
+            gameAlert("Congratulations!","Player " + aiPlayer + " won!");
             game = false;
         } else if (checkDraw()) {
             gameAlert("Draw!", "Nobody won.");
@@ -101,10 +101,12 @@ function getState(number) {
 function gameAlert(header, message) {
     var messageoverlay = document.getElementById("messageoverlay");
     var messagebox = document.getElementById("messagebox");
+    var messagearea = document.getElementById("message");
     messageoverlay.style.display = "block";
     messagebox.style.left = (window.innerWidth/2) - (550 * .5)+"px";
-    messagebox.style.top = "100px";
+    messagebox.style.top = "80px";
     messagebox.style.display = "block";
+    messagearea.style.display = "none";
     document.getElementById("messageboxhead").innerHTML = header;
     document.getElementById("messageboxbody").innerHTML = message;
     document.getElementById("messageboxfoot").innerHTML = '<button onclick="reset()">Start Over</button>';

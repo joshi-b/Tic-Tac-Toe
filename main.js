@@ -1,7 +1,6 @@
 var human = true;
 var game = true;
 
-//assume human always x for now.
 var huPlayer;
 var aiPlayer;
 

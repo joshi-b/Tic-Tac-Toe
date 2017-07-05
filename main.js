@@ -152,7 +152,7 @@ function checkWin(player) {
 }
 
 function bestMove() {
-    if (one == null && ((three.innerText == huPlayer && two.innerText == huPlayer) || (nine.innerText == huPlayer && five.innerText == huPlayer) || (seven.innerText == huPlayer && four.innerText == huPlayer))) {
+    if (one.innerText == "" && ((three.innerText == huPlayer && two.innerText == huPlayer) || (nine.innerText == huPlayer && five.innerText == huPlayer) || (seven.innerText == huPlayer && four.innerText == huPlayer))) {
         document.getElementById("cell-1").innerHTML = aiPlayer;
     } else {
         if (two.innerText == "" && ((one.innerText == huPlayer && three.innerText == huPlayer) || (eight.innerText == huPlayer && five.innerText == huPlayer))) {

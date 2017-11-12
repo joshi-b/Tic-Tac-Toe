@@ -7,12 +7,11 @@
 </head>
 <body>
     <h1 id="title">Tic Tac Toe</h1>
-    <div id ="message">player turn goes here</div>
     <div id="start-menu">
         <h4>Choose a player</h4>
         <div id="buttons">
-            <button id="pX" onclick="playerButton(this)">Player X</button>
-            <button id="pO" onclick="playerButton(this)">Player O</button>
+            <button id="pX" onClick="playerX();">Player X</button>
+            <button id="pO" onClick="playerO();">Player O</button>
         </div>
     </div>
     <div id = "messageoverlay"></div>
@@ -25,21 +24,22 @@
     </div>
     <table id="gameBoard">
         <tr>
-            <td id= "cell-1" class="Box" onclick="gamePlay(this)"></td>
-            <td id= "cell-2" class="Box" onclick="gamePlay(this)"></td>
-            <td id= "cell-3" class="Box" onclick="gamePlay(this)"></td>
+            <td id= "cell-0" class="box" onclick = "gamePlay(this)"></td>
+            <td id= "cell-1" class="box" onclick = "gamePlay(this)"></td>
+            <td id= "cell-2" class="box" onclick = "gamePlay(this)"></td>
         </tr>
         <tr>
-            <td id= "cell-4" class="Box" onclick="gamePlay(this)"></td>
-            <td id= "cell-5" class="Box" onclick="gamePlay(this)"></td>
-            <td id= "cell-6" class="Box" onclick="gamePlay(this)"></td>
+            <td id= "cell-3" class="box" onclick = "gamePlay(this)"></td>
+            <td id= "cell-4" class="box" onclick = "gamePlay(this)"></td>
+            <td id= "cell-5" class="box" onclick = "gamePlay(this)"></td>
         </tr>
         <tr>
-            <td id= "cell-7" class="Box" onclick="gamePlay(this)"></td>
-            <td id= "cell-8" class="Box" onclick="gamePlay(this)"></td>
-            <td id= "cell-9" class="Box" onclick="gamePlay(this)"></td>
+            <td id= "cell-6" class="box" onclick = "gamePlay(this)"></td>
+            <td id= "cell-7" class="box" onclick = "gamePlay(this)"></td>
+            <td id= "cell-8" class="box" onclick = "gamePlay(this)"></td>
         </tr>
     </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src='main.js'></script>
 </body>
 </html>

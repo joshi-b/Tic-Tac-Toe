@@ -57,38 +57,37 @@ table {
     margin-top: 0;
 }
 
-#cell-1 {
+#cell-0 {
     border-top: none;
     border-left: none;
+}
+
+#cell-1 {
+    border-top: none;
 }
 
 #cell-2 {
     border-top: none;
+    border-right: none;
 }
 
 #cell-3 {
-    border-top: none;
-    border-right: none;
+    border-left: none;
 }
 
 #cell-4 {
-    border-left: none;
-}
-
-#cell-6 {
     border-right: none;
 }
 
+#cell-5 {
+    border-bottom: none;
+}
+
+#cell-6 {
+    border-bottom: none;
+}
+
 #cell-7 {
-    border-left: none;
-    border-bottom: none;
-}
-
-#cell-8 {
-    border-bottom: none;
-}
-
-#cell-9 {
     border-right: none;
     border-bottom: none;
 }

@@ -1,2 +1,5 @@
 # tic-tac-toe
-A tic tac toe game with a simple AI algorithm coded using HTML and pure JavaScript.
+An unbeatable game of tic tac toe.
+Built using HTML, CSS, JavaScript and the minimax algorithm.
+
+Play here: https://joshi-b.github.io/tic-tac-toe/
